@@ -1,0 +1,13 @@
+services:
+  reverse-proxy:
+    build: reverse-proxy
+    ports:
+      - 80:80
+      - 3001:3001
+  ui:
+    build: ui
+    ports:
+      - 3000
+      - 3101
+    volumes:
+      - ./ui/src:/app/src
